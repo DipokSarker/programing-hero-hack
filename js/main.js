@@ -7,7 +7,7 @@ function loadMilestones() {
 
     milestones.innerHTML = `${milestonesData
       .map(function(milestone){
-      return `<div class="milestone border-b" id=${milestone._id}>
+      return `<div class="milestone border-b" id="${milestone._id}">
       <div class="flex">
         <div class="checkbox"><input type="checkbox" onclick="markMileStone
         (this, ${
@@ -79,12 +79,12 @@ milestoneImage.onload = function(){
 };
 
 
-function markMilestone(checkbox, id){
-    const doneList = document.querySeluector(".doneList");
-    const milestonesList = document.querySeluector(".milestonesList");
+function markMileStone(checkbox, id) {
+    const doneList = document.querySelector(".doneList");
+    const milestonesList = document.querySelector(".milestones");
     const item = document.getElementById(id);
 
-    if(checkbox.checked){
+    if(checkbox.checked) {
       //mark as done
       milestonesList.removeChild(item);
       doneList.appendChild(item);
